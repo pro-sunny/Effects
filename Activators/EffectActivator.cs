@@ -54,8 +54,6 @@ public abstract class EffectActivator : MonoBehaviour
     {
         Dictionary<Modifier, ParameterModiferValue> effectParameters = GetEffectValue(activeEffect, target);
 
-        // Debug.Log("Effect applied: " + activeEffect + " ------ target = " + target);
-
         foreach (KeyValuePair<Modifier, ParameterModiferValue> parameter in effectParameters)
         {
             if (parameter.Key == Modifier.Damage)
@@ -79,8 +77,6 @@ public abstract class EffectActivator : MonoBehaviour
 
     public void ApplyVisualization(Targetable target)
     {
-        // PoolManager.instance.GetPoolable(effect.visualization);
-        // TODO: this should work from pool NO IT SHOULDN"T !!!
         if (visualizer == null)
         {
             return;
@@ -95,7 +91,6 @@ public abstract class EffectActivator : MonoBehaviour
             }
         } else
         {
-            // visualizer.transform.position = target.transform.position;
             visualizer?.Visualize();
         }
     }
